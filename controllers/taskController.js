@@ -66,7 +66,7 @@ exports.updateTask = async (req, res) => {
     if (subject !== undefined) task.subject = subject;
     if (deadline !== undefined) task.deadline = deadline;
     if (status !== undefined) task.status = status;
-    if (subtasks !== undefined) task.subtasks = subtasks;
+    // if (subtasks !== undefined) task.subtasks = subtasks;
 
     await user.save();
     res.json(task);

@@ -8,7 +8,10 @@ const {
   deleteTask,
 } = require("../controllers/taskController");
 const auth = require("../middleware/authMiddleware");
-const { getSubtasks } = require("../controllers/subtaskController");
+const {
+  getSubtasks,
+  updateSubtasks,
+} = require("../controllers/subtaskController");
 
 router.get("/", auth, getAllTasks);
 router.post("/", auth, addTask);
@@ -16,6 +19,6 @@ router.put("/:taskId", auth, updateTask);
 router.delete("/:taskId", auth, deleteTask);
 
 router.get("/:taskId/subtasks", auth, getSubtasks);
-router.put("/:taskId/subtasks", auth, updateTask);
+router.put("/:taskId/subtasks", auth, updateSubtasks);
 
 module.exports = router;
