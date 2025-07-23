@@ -52,7 +52,7 @@ exports.updateSubtasks = async (req, res) => {
 
     res.status(200).json({
       message: "Subtasks updated successfully.",
-      subtasks: newSubtasks,
+      subtasks: [...deletedSubtasks, ...newSubtasks],
     });
   } catch (error) {
     console.error("Error updating subtasks:", error);
